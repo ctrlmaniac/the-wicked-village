@@ -37,22 +37,27 @@ export default class Scene {
       let key = ev.key;
 
       switch (key) {
+        case "F":
         case "f":
           this.front();
           break;
 
+        case "R":
         case "r":
           this.right();
           break;
 
+        case "B":
         case "b":
           this.back();
           break;
 
+        case "L":
         case "l":
           this.left();
           break;
 
+        case "H":
         case "h":
           this.blueprint();
           break;

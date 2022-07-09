@@ -6,7 +6,7 @@ const input = document.getElementById("input") as HTMLFormElement;
 input.addEventListener("onkeydown", (ev) => {
   ev.preventDefault();
 
-  const key = input.value;
+  const key = input.value.toLowerCase();
 
   window.dispatchEvent(
     new KeyboardEvent("keydown", {
