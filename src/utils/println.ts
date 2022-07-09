@@ -10,4 +10,8 @@ export default function (lines: string[]) {
     // Scroll page to the bottom
     window.scrollBy(0, 100);
   }
+
+  const br = document.createElement("br");
+  br.style.marginBottom = "16px";
+  main.append(br);
 }
