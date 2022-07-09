@@ -1,4 +1,4 @@
-import Game from "game";
+import Game from "../game";
 import { println } from "../utils";
 import Scene from "./scene";
 
