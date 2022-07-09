@@ -3,16 +3,19 @@ import { println } from "../utils";
 import Scene from "./scene";
 
 export default class Intro extends Scene {
-  welcome() {
-    println([
-      "Your in front of a gate.",
-      "The gate opens to a foreing village.",
-    ]);
+  blueprint(): void {
+    println(["In front of you ther's a gate."]);
 
     this.move();
   }
 
-  front() {
+  welcome(): void {
+    println(["You're just outside of the village."]);
+
+    this.blueprint();
+  }
+
+  front(): void {
     println(["You enter the village"]);
     this.game.scenes.road1.welcome();
   }
