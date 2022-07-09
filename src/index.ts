@@ -1,12 +1,11 @@
 import Game from "./game";
 import "./index.scss";
 
-const form = document.getElementById("form") as HTMLFormElement;
+const input = document.getElementById("input") as HTMLFormElement;
 
-form.addEventListener("submit", (ev) => {
+input.addEventListener("onkeydown", (ev) => {
   ev.preventDefault();
 
-  const input = form.elements[0] as HTMLFormElement;
   const key = input.value;
 
   window.dispatchEvent(
