@@ -19,7 +19,11 @@ export default class Road1 extends Scene {
     this.blueprint();
   }
 
+  right(): void {
+    this.game.scenes.House1.welcome();
+  }
+
   back(): void {
-    this.game.scenes.maingate.welcome();
+    this.game.scenes.MainGate.welcome();
   }
 }

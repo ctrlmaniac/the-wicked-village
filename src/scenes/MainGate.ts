@@ -15,7 +15,7 @@ export default class MainGate extends Scene {
 
   front(): void {
     println(["You enter the village."]);
-    this.game.scenes.road1.welcome();
+    this.game.scenes.Road1.welcome();
   }
 
   right(): void {
