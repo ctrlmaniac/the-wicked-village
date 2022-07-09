@@ -46,27 +46,32 @@ export default class House1 extends Scene {
   }
 
   knockOnDoor(): void {
-    println([
-      "You knock on the door...",
-      "It seems that noone is in the house.",
-      "Do you want to try to open the door?",
-    ]);
+    println(["You knock on the door..."]);
 
-    document.onkeydown = (ev) => {
-      let key = ev.key;
+    setTimeout(() => {
+      println([
+        "It seems that noone is in the house.",
+        "Do you want to try to open the door?",
+      ]);
 
-      switch (key) {
-        case "Y":
-        case "y":
-          this.openTheDoor();
-          break;
+      document.onkeydown = (ev) => {
+        let key = ev.key;
 
-        default:
-          println(["You go back..."]);
-          this.welcome();
-          break;
-      }
-    };
+        switch (key) {
+          case "Y":
+          case "y":
+            this.openTheDoor();
+            break;
+
+          default:
+            println(["You go back..."]);
+            setTimeout(() => {
+              this.welcome();
+            }, 2000);
+            break;
+        }
+      };
+    }, 4000);
   }
 
   openTheDoor(): void {
@@ -75,11 +80,37 @@ export default class House1 extends Scene {
         "You try to open the door but it is closed from the other side.",
         "You go back...",
       ]);
-      this.welcome();
+
+      setTimeout(() => {
+        this.welcome();
+      }, 4000);
     }
+  }
+
+  right(): void {
+    println([
+      "There's a window.",
+      "You try to see if there's someone inside, but it seems that noone is there.",
+      "You go back...",
+    ]);
+
+    setTimeout(() => {
+      this.welcome();
+    }, 2000);
   }
 
   back(): void {
     this.game.scenes.Road1.welcome();
+  }
+
+  left(): void {
+    println([
+      "There's an old bench here but nothing useful.",
+      "You go back...",
+    ]);
+
+    setTimeout(() => {
+      this.welcome();
+    }, 2000);
   }
 }
