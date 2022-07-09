@@ -3,7 +3,7 @@ import Scene from "./Scene";
 
 export default class MainGate extends Scene {
   blueprint(): void {
-    println(["In front of you there's a gate."]);
+    println(["- In front of you there's a gate."]);
 
     this.move();
   }

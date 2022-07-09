@@ -4,10 +4,10 @@ import Scene from "./Scene";
 export default class House1 extends Scene {
   blueprint(): void {
     println([
-      "In front of you there's a closed door.",
-      "On your right there's a window",
-      "On your back there's the main road.",
-      "On your left there's a bench.",
+      "- In front of you there's a closed door.",
+      "- On your right there's a window",
+      "- On your back there's the main road.",
+      "- On your left there's a bench.",
     ]);
 
     this.move();
