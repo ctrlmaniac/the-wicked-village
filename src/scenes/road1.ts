@@ -1,4 +1,3 @@
-import Game from "../game";
 import { println } from "../utils";
 import Scene from "./scene";
 
@@ -21,6 +20,6 @@ export default class Road1 extends Scene {
   }
 
   back(): void {
-    this.game.scenes.intro.welcome();
+    this.game.scenes.maingate.welcome();
   }
 }

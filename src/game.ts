@@ -1,12 +1,12 @@
-import { Intro, Road1 } from "./scenes";
+import { MainGate, Road1 } from "./scenes";
 
 export default class Game {
   scenes = {
-    intro: new Intro(this),
+    maingate: new MainGate(this),
     road1: new Road1(this),
   };
 
   play() {
-    this.scenes.intro.welcome();
+    this.scenes.maingate.welcome();
   }
 }

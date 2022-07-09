@@ -1,8 +1,7 @@
-import Game from "../game";
 import { println } from "../utils";
 import Scene from "./scene";
 
-export default class Intro extends Scene {
+export default class MainGate extends Scene {
   blueprint(): void {
     println(["In front of you there's a gate."]);
 

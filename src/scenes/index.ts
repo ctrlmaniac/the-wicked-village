@@ -1,2 +1,2 @@
-export { default as Intro } from "./intro";
+export { default as MainGate } from "./mainGate";
 export { default as Road1 } from "./road1";
