@@ -15,8 +15,12 @@ export default class Road1 extends Scene {
   }
 
   welcome(): void {
-    println(["You're on the main road"]);
+    println(["You're on the main road."]);
 
     this.blueprint();
+  }
+
+  back(): void {
+    this.game.scenes.intro.welcome();
   }
 }
