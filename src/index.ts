@@ -4,6 +4,7 @@ import "./index.scss";
 const form = document.getElementById("form");
 const input = document.getElementById("input") as HTMLFormElement;
 
+// Transform input into a keyboard keydown event
 form.addEventListener("submit", (ev) => {
   ev.preventDefault();
 
@@ -14,6 +15,7 @@ form.addEventListener("submit", (ev) => {
   document.dispatchEvent(event);
 });
 
+// Init the game
 const game = new Game();
 
 game.play();

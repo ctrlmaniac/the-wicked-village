@@ -6,5 +6,8 @@ export default function (lines: string[]) {
     p.innerText = line;
 
     main.append(p);
+
+    // Scroll page to the bottom
+    window.scrollBy(0, 100);
   }
 }
