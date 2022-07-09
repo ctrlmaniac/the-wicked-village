@@ -1,5 +1,5 @@
 import { println } from "../utils";
-import Scene from "./scene";
+import Scene from "./Scene";
 
 export default class MainGate extends Scene {
   blueprint(): void {
