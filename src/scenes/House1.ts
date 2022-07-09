@@ -2,6 +2,8 @@ import { println } from "../utils";
 import Scene from "./Scene";
 
 export default class House1 extends Scene {
+  doorLoked: boolean = true;
+
   blueprint(): void {
     println([
       "- In front of you there's a closed door.",
@@ -21,6 +23,60 @@ export default class House1 extends Scene {
     ]);
 
     this.blueprint();
+  }
+
+  front(): void {
+    println(["The door is closed.", "Do you want to knock on the door?"]);
+
+    document.onkeydown = (ev) => {
+      let key = ev.key;
+
+      switch (key) {
+        case "Y":
+        case "y":
+          this.knockOnDoor();
+          break;
+
+        default:
+          println(["You go back..."]);
+          this.welcome();
+          break;
+      }
+    };
+  }
+
+  knockOnDoor(): void {
+    println([
+      "You knock on the door...",
+      "It seems that noone is in the house.",
+      "Do you want to try to open the door?",
+    ]);
+
+    document.onkeydown = (ev) => {
+      let key = ev.key;
+
+      switch (key) {
+        case "Y":
+        case "y":
+          this.openTheDoor();
+          break;
+
+        default:
+          println(["You go back..."]);
+          this.welcome();
+          break;
+      }
+    };
+  }
+
+  openTheDoor(): void {
+    if (this.doorLoked) {
+      println([
+        "You try to open the door but it is closed from the other side.",
+        "You go back...",
+      ]);
+      this.welcome();
+    }
   }
 
   back(): void {
