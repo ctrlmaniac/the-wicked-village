@@ -1,18 +1,17 @@
 import Game from "./game";
 import "./index.scss";
 
+const form = document.getElementById("form");
 const input = document.getElementById("input") as HTMLFormElement;
 
-input.addEventListener("change", (ev) => {
+form.addEventListener("submit", (ev) => {
   ev.preventDefault();
 
   const key = input.value.toLowerCase();
 
-  window.dispatchEvent(
-    new KeyboardEvent("keydown", {
-      key: key,
-    })
-  );
+  let event = new KeyboardEvent("keydown", { key: key });
+
+  document.dispatchEvent(event);
 });
 
 const game = new Game();
