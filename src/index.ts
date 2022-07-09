@@ -3,7 +3,7 @@ import "./index.scss";
 
 const input = document.getElementById("input") as HTMLFormElement;
 
-input.addEventListener("onkeydown", (ev) => {
+input.addEventListener("change", (ev) => {
   ev.preventDefault();
 
   const key = input.value.toLowerCase();
