@@ -25,7 +25,12 @@ export default class House2Hall extends Scene {
   }
 
   front(): void {
-    // hallway
+    println([
+      "The hallway is blocked by some old forniture.",
+      "You can't go forward!",
+      "You go back...",
+    ]);
+    this.move();
   }
 
   right(): void {
