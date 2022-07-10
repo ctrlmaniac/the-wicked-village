@@ -49,8 +49,12 @@ export default class House2Hall extends Scene {
   }
 
   openTheDoor() {
-    if (this.game.player.checkItem(Items.House2Passepartout)) {
+    if (
+      this.game.player.checkItem(Items.House2Passepartout) ||
+      !this.game.scenes.House2Diningroom.doorLocked
+    ) {
       println(["You unlock the door and enter the room."]);
+      this.game.scenes.House2Diningroom.doorLocked = false;
       this.game.scenes.House2Diningroom.welcome();
     } else {
       println([

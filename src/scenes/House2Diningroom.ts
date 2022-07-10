@@ -3,6 +3,8 @@ import { println } from "../utils";
 import Scene from "./Scene";
 
 export default class House2Diningroom extends Scene {
+  doorLocked = true;
+
   welcome(): void {
     println([
       "You're in the dining room.",
