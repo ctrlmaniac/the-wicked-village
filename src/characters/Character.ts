@@ -19,7 +19,14 @@ export default class Character {
     if (this.items.length == 0) {
       println(["There's nothing in your pockets."]);
     } else {
-      println([...this.items]);
+      const pocket: string[] = [];
+
+      for (let i = 0; i < this.items.length; i++) {
+        const element = this.items[i];
+        pocket.push(`${i}: ${element}`);
+      }
+
+      println([...pocket]);
     }
   }
 
