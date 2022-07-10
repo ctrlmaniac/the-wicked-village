@@ -16,4 +16,8 @@ export default class Road1B extends Scene {
     ]);
     this.move();
   }
+
+  back(): void {
+    this.game.scenes.Road1A.welcome();
+  }
 }
