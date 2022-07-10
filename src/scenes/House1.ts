@@ -39,7 +39,7 @@ export default class House1 extends Scene {
 
         default:
           println(["You go back..."]);
-          this.welcome();
+          this.move();
           break;
       }
     };
@@ -66,7 +66,7 @@ export default class House1 extends Scene {
           default:
             println(["You go back..."]);
             setTimeout(() => {
-              this.welcome();
+              this.move();
             }, 2000);
             break;
         }
@@ -82,7 +82,7 @@ export default class House1 extends Scene {
       ]);
 
       setTimeout(() => {
-        this.welcome();
+        this.move();
       }, 4000);
     }
   }
@@ -95,7 +95,7 @@ export default class House1 extends Scene {
     ]);
 
     setTimeout(() => {
-      this.welcome();
+      this.move();
     }, 2000);
   }
 
@@ -110,7 +110,7 @@ export default class House1 extends Scene {
     ]);
 
     setTimeout(() => {
-      this.welcome();
+      this.move();
     }, 2000);
   }
 }
