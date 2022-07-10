@@ -68,6 +68,11 @@ export default class Scene {
           this.move();
           break;
 
+        case "D":
+        case "d":
+          this.game.player.dropItem(this);
+          break;
+
         default:
           break;
       }

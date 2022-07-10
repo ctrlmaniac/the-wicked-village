@@ -1,9 +1,10 @@
+import Scene from "../scenes/Scene";
 import { println } from "../utils";
 
 export default class Character {
   private maxHealth: number;
   private health: number;
-  private items: string[] = [];
+  items: string[] = [];
 
   constructor() {
     this.maxHealth = 20;
@@ -32,5 +33,37 @@ export default class Character {
 
   checkItem(item: string) {
     return this.items.includes(item);
+  }
+
+  dropItem(scene: Scene) {
+    if (this.items.length === 0) {
+      println(["There's nothing in your pockets."]);
+    } else {
+      println([
+        "Pick the number of the item you want to drop.",
+        "Be careful! You won't be able to recover!",
+      ]);
+      this.checkItems();
+
+      document.onkeydown = (ev) => {
+        const key = parseInt(ev.key);
+
+        if (isNaN(key)) {
+          println(["You chose wrong!"]);
+          this.dropItem(scene);
+        } else {
+          if (key <= this.items.length) {
+            const item = this.items[key];
+            println(["You've just dropped " + item]);
+            this.items.splice(key, 1);
+
+            scene.move();
+          } else {
+            println(["This item does not exist!"]);
+            this.dropItem(scene);
+          }
+        }
+      };
+    }
   }
 }
