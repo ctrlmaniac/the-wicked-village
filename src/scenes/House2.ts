@@ -95,7 +95,8 @@ export default class House2 extends Scene {
   right(): void {
     println([
       "The window is broken. You try to see through.",
-      "The house seems abandonded, maybe there's just nothing useful inside.",
+      "The house seems abandonded, the fornitures are not in their place.",
+      "You see a couch and something shimmers on it.",
       "You go back...",
     ]);
     this.move();
