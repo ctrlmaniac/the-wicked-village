@@ -8,7 +8,7 @@ export default class House2Hall extends Scene {
       "- In front of you there's the hallway.",
       "- On your right there's a closed door.",
       "- On your back there's the main door to the road.",
-      "- On your left there's the living room.",
+      "- On your left there's the livingroom.",
     ]);
 
     this.move();
