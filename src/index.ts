@@ -17,7 +17,6 @@ form.addEventListener("submit", (ev) => {
 });
 
 const player = new Player();
-
 // Init the game
 const game = new Game(player);
 

@@ -22,6 +22,8 @@ export default class House2Diningroom extends Scene {
   }
 
   front(): void {
+    let fired = false;
+
     println([
       "The smell is very bed!",
       "The food is left to rot!",
@@ -30,16 +32,18 @@ export default class House2Diningroom extends Scene {
     ]);
 
     document.onkeydown = (ev) => {
-      let key = ev.key;
+      if (!fired) {
+        fired = true;
 
-      switch (key) {
-        case "Y":
-        case "y":
-          this.game.player.pickAnItem(Items.KitchenKnife);
-          break;
+        switch (ev.key) {
+          case "Y":
+          case "y":
+            this.game.player.pickAnItem(Items.KitchenKnife);
+            break;
 
-        default:
-          break;
+          default:
+            break;
+        }
       }
 
       println(["You go back..."]);

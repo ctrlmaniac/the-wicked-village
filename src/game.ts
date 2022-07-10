@@ -9,6 +9,7 @@ import {
   Road1A,
   Road1B,
 } from "./scenes";
+import { println } from "./utils";
 
 export default class Game {
   player: Player;
@@ -28,7 +29,12 @@ export default class Game {
     House2Diningroom: new House2Diningroom(this),
   };
 
-  play() {
+  gameOver(): void {
+    println(["GAME OVER!"]);
+    return;
+  }
+
+  play(): void {
     this.scenes.MainGate.welcome();
   }
 }

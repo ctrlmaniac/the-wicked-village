@@ -33,48 +33,51 @@ export default class Scene {
   }
 
   move(): void {
+    let fired = false;
     document.onkeydown = (ev) => {
-      let key = ev.key;
+      if (!fired) {
+        fired = true;
 
-      switch (key) {
-        case "F":
-        case "f":
-          this.front();
-          break;
+        switch (ev.key) {
+          case "F":
+          case "f":
+            this.front();
+            break;
 
-        case "R":
-        case "r":
-          this.right();
-          break;
+          case "R":
+          case "r":
+            this.right();
+            break;
 
-        case "B":
-        case "b":
-          this.back();
-          break;
+          case "B":
+          case "b":
+            this.back();
+            break;
 
-        case "L":
-        case "l":
-          this.left();
-          break;
+          case "L":
+          case "l":
+            this.left();
+            break;
 
-        case "H":
-        case "h":
-          this.blueprint();
-          break;
+          case "H":
+          case "h":
+            this.blueprint();
+            break;
 
-        case "I":
-        case "i":
-          this.game.player.checkItems();
-          this.move();
-          break;
+          case "I":
+          case "i":
+            this.game.player.checkItems();
+            this.move();
+            break;
 
-        case "D":
-        case "d":
-          this.game.player.dropItem(this);
-          break;
+          case "D":
+          case "d":
+            this.game.player.dropItem(this);
+            break;
 
-        default:
-          break;
+          default:
+            break;
+        }
       }
     };
   }

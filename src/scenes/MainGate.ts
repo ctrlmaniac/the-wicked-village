@@ -11,7 +11,7 @@ export default class MainGate extends Scene {
 
     setTimeout(() => {
       this.doorLocked = true;
-    }, 60000);
+    }, 1);
   }
 
   blueprint(): void {
@@ -26,8 +26,16 @@ export default class MainGate extends Scene {
   }
 
   front(): void {
-    println(["You enter the village."]);
-    this.game.scenes.Road1A.welcome();
+    if (this.doorLocked) {
+      println([
+        "The gate is closed!",
+        "You lose all hopes of finding your daughter!",
+      ]);
+      this.game.gameOver();
+    } else {
+      println(["You enter the village."]);
+      this.game.scenes.Road1A.welcome();
+    }
   }
 
   right(): void {

@@ -34,21 +34,25 @@ export default class House2Hall extends Scene {
   }
 
   right(): void {
+    let fired = false;
+
     println(["There's a closed door. Do you want to try open it?"]);
 
     document.onkeydown = (ev) => {
-      let key = ev.key;
+      if (!fired) {
+        fired = true;
 
-      switch (key) {
-        case "Y":
-        case "y":
-          this.openTheDoor();
-          break;
+        switch (ev.key) {
+          case "Y":
+          case "y":
+            this.openTheDoor();
+            break;
 
-        default:
-          println(["You go back..."]);
-          this.move();
-          break;
+          default:
+            println(["You go back..."]);
+            this.move();
+            break;
+        }
       }
     };
   }

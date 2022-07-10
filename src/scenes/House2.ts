@@ -27,26 +27,31 @@ export default class House2 extends Scene {
   }
 
   front(): void {
+    let fired = false;
     println(["The door is closed.", "Do you want to knock on the door?"]);
 
     document.onkeydown = (ev) => {
-      let key = ev.key;
+      if (!fired) {
+        fired = true;
 
-      switch (key) {
-        case "Y":
-        case "y":
-          this.knockOnDoor();
-          break;
+        switch (ev.key) {
+          case "Y":
+          case "y":
+            this.knockOnDoor();
+            break;
 
-        default:
-          println(["You go back..."]);
-          this.move();
-          break;
+          default:
+            println(["You go back..."]);
+            this.move();
+            break;
+        }
       }
     };
   }
 
   knockOnDoor(): void {
+    let fired = false;
+
     println(["You knock on the door..."]);
 
     setTimeout(() => {
@@ -56,18 +61,20 @@ export default class House2 extends Scene {
       ]);
 
       document.onkeydown = (ev) => {
-        let key = ev.key;
+        if (!fired) {
+          fired = true;
 
-        switch (key) {
-          case "Y":
-          case "y":
-            this.openTheDoor();
-            break;
+          switch (ev.key) {
+            case "Y":
+            case "y":
+              this.openTheDoor();
+              break;
 
-          default:
-            println(["You go back..."]);
-            this.move();
-            break;
+            default:
+              println(["You go back..."]);
+              this.move();
+              break;
+          }
         }
       };
     }, 4000);
