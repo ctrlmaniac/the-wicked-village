@@ -4,6 +4,7 @@ export { default as MainGate } from "./MainGate";
 export { default as Road1A } from "./Road1A";
 export { default as Road1B } from "./Road1B";
 export { default as Road1C } from "./Road1C";
+export { default as Road1D } from "./Road1D";
 
 // House 1
 export { default as House1 } from "./House1";
