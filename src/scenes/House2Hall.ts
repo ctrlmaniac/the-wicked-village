@@ -33,6 +33,6 @@ export default class House2Hall extends Scene {
   }
 
   left(): void {
-    // livingroom
+    this.game.scenes.House2Livingroom.welcome();
   }
 }
