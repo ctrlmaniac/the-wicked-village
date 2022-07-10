@@ -42,4 +42,8 @@ export default class House2Livingroom extends Scene {
       this.blueprint();
     }, 2000);
   }
+
+  back(): void {
+    this.game.scenes.House2Hall.welcome();
+  }
 }
