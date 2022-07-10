@@ -9,6 +9,8 @@ export default class House2Hall extends Scene {
       "- On your back there's the main door to the road.",
       "- On your left there's the living room.",
     ]);
+
+    this.move();
   }
 
   welcome(): void {
@@ -16,6 +18,8 @@ export default class House2Hall extends Scene {
       "The house is neglected.",
       "It seems that noone has lived in this house for a long time.",
     ]);
+
+    this.blueprint();
   }
 
   front(): void {
