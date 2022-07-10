@@ -100,7 +100,7 @@ export default class House1 extends Scene {
   }
 
   back(): void {
-    this.game.scenes.Road1.welcome();
+    this.game.scenes.Road1A.welcome();
   }
 
   left(): void {
