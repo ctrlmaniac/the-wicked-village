@@ -46,4 +46,8 @@ export default class House2Diningroom extends Scene {
       this.move();
     };
   }
+
+  back(): void {
+    this.game.scenes.House2Hall.welcome();
+  }
 }
