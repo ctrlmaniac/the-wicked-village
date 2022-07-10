@@ -17,7 +17,7 @@ export default class House1 extends Scene {
 
   welcome(): void {
     println([
-      "You're in front of a house.",
+      "You're in front of a house at the first street number.",
       "The house is old and in bad conditions.",
       "You need to find your daugther, maybe the owner knows something...",
     ]);

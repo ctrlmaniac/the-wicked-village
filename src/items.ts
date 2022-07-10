@@ -1,3 +1,3 @@
 export enum Items {
-  House2Passepartout = "PASSEPARTOUT",
+  House2Passepartout = "ST2. PASSEPARTOUT",
 }

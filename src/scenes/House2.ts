@@ -17,7 +17,8 @@ export default class House2 extends Scene {
 
   welcome(): void {
     println([
-      "The house is very old.",
+      "The house it at the second street number.",
+      "It's is very old.",
       "The garden is overgrown and deserted.",
       "It seems that noone has lived in this house for a long time.",
     ]);
@@ -39,7 +40,7 @@ export default class House2 extends Scene {
 
         default:
           println(["You go back..."]);
-          this.welcome();
+          this.move();
           break;
       }
     };
@@ -65,9 +66,7 @@ export default class House2 extends Scene {
 
           default:
             println(["You go back..."]);
-            setTimeout(() => {
-              this.welcome();
-            }, 2000);
+            this.move();
             break;
         }
       };
@@ -99,10 +98,7 @@ export default class House2 extends Scene {
       "The house seems abandonded, maybe there's just nothing useful inside.",
       "You go back...",
     ]);
-
-    setTimeout(() => {
-      this.welcome();
-    }, 4000);
+    this.move();
   }
 
   back(): void {
@@ -116,8 +112,6 @@ export default class House2 extends Scene {
       "You go back...",
     ]);
 
-    setTimeout(() => {
-      this.welcome();
-    }, 4000);
+    this.move();
   }
 }
