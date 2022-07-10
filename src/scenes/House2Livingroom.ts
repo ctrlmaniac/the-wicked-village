@@ -20,4 +20,12 @@ export default class House2Livingroom extends Scene {
     ]);
     this.blueprint();
   }
+
+  front(): void {
+    println([
+      "The couch is dusty and full of papers, sheets and all sorts of stuff.",
+      "You see there's something that shimmer under the light of the sun.",
+      "There's a key!",
+    ]);
+  }
 }
