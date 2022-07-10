@@ -1,3 +1,4 @@
+import { Items } from "../items";
 import { println } from "../utils";
 import Scene from "./Scene";
 
@@ -28,7 +29,38 @@ export default class House2Hall extends Scene {
 
   right(): void {
     println(["There's a closed door. Do you want to try open it?"]);
-    // diningroom
+
+    document.onkeydown = (ev) => {
+      let key = ev.key;
+
+      switch (key) {
+        case "Y":
+        case "y":
+          this.openTheDoor();
+          break;
+
+        default:
+          println(["You go back..."]);
+          setTimeout(() => {
+            this.move();
+          }, 2000);
+          break;
+      }
+    };
+  }
+
+  openTheDoor() {
+    if (this.game.player.checkItem(Items.House2Passepartout)) {
+      println(["You unlock the door and enter the room"]);
+      // livingroom
+    } else {
+      println([
+        "The door is locked. You need a key to enter the room.",
+        "You go back...",
+      ]);
+
+      this.move();
+    }
   }
 
   back(): void {
