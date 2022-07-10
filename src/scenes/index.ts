@@ -6,6 +6,9 @@ export { default as Road1B } from "./Road1B";
 export { default as Road1C } from "./Road1C";
 export { default as Road1D } from "./Road1D";
 
+// Road 2
+export { default as Road2A } from "./Road2A";
+
 // House 1
 export { default as House1 } from "./House1";
 
