@@ -24,7 +24,16 @@ export default class Road1A extends Scene {
   }
 
   back(): void {
-    this.game.scenes.MainGate.welcome();
+    if (this.game.scenes.MainGate.doorLocked) {
+      println([
+        "The gate has been closed!",
+        "You can't escape the village!",
+        "You need a key to exit...",
+      ]);
+      this.move();
+    } else {
+      this.game.scenes.MainGate.welcome();
+    }
   }
 
   left(): void {

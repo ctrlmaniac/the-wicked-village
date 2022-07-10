@@ -1,7 +1,19 @@
+import Game from "../game";
 import { println } from "../utils";
 import Scene from "./Scene";
 
 export default class MainGate extends Scene {
+  doorLocked: boolean = false;
+
+  constructor(game: Game) {
+    super(game);
+    this.game = game;
+
+    setTimeout(() => {
+      this.doorLocked = true;
+    }, 60000);
+  }
+
   blueprint(): void {
     println(["- In front of you there's a gate."]);
 
