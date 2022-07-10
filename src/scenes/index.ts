@@ -8,6 +8,7 @@ export { default as Road1D } from "./Road1D";
 
 // Road 2
 export { default as Road2A } from "./Road2A";
+export { default as Road2B } from "./Road2B";
 
 // House 1
 export { default as House1 } from "./House1";

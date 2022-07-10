@@ -13,6 +13,7 @@ import {
   Road1C,
   Road1D,
   Road2A,
+  Road2B,
 } from "./scenes";
 import { println } from "./utils";
 
@@ -32,6 +33,7 @@ export default class Game {
     Road1D: new Road1D(this),
 
     Road2A: new Road2A(this),
+    Road2B: new Road2B(this),
 
     House1: new House1(this),
 
