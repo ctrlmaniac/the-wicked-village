@@ -1,6 +1,6 @@
 {
   "name": "the-wicked-village",
-  "version": "0.0.2",
+  "version": "0.3.0",
   "description": "a text-based game written in typescript",
   "main": "dist/bundle.js",
   "repository": "git@github.com:ctrlmaniac/the-wicked-village.git",
