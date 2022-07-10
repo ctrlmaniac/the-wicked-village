@@ -36,8 +36,6 @@ export default class Scene {
     let fired = false;
 
     document.onkeydown = (ev) => {
-      console.log(ev.key);
-
       if (!fired) {
         fired = true;
 

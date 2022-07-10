@@ -39,28 +39,40 @@ export default class Character {
     if (this.items.length === 0) {
       println(["There's nothing in your pockets."]);
     } else {
+      let fired = false;
+
       println([
         "Pick the number of the item you want to drop.",
         "Be careful! You won't be able to recover!",
+        "Press Delete, or Q to abort.",
       ]);
+
       this.checkItems();
 
       document.onkeydown = (ev) => {
-        const key = parseInt(ev.key);
-
-        if (isNaN(key)) {
-          println(["You chose wrong!"]);
-          this.dropItem(scene);
-        } else {
-          if (key <= this.items.length) {
-            const item = this.items[key];
-            println(["You've just dropped " + item]);
-            this.items.splice(key, 1);
+        if (!fired) {
+          if (ev.key === "Delete" || ev.key === "q") {
+            println(["You didn't drop anything."]);
 
             scene.move();
           } else {
-            println(["This item does not exist!"]);
-            this.dropItem(scene);
+            const key = parseInt(ev.key);
+
+            if (isNaN(key)) {
+              println(["You chose wrong!"]);
+              this.dropItem(scene);
+            } else {
+              if (key <= this.items.length) {
+                const item = this.items[key];
+                println(["You've just dropped " + item]);
+                this.items.splice(key, 1);
+
+                scene.move();
+              } else {
+                println(["This item does not exist!"]);
+                this.dropItem(scene);
+              }
+            }
           }
         }
       };
