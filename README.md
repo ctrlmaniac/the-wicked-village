@@ -18,3 +18,4 @@ Use the keyboard to move around and perform actions:
 ## Attributes:
 
 Photo by [Edilson Borges](https://unsplash.com/@edilson?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/horror?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+Favicon by [SVGRepo](https://www.svgrepo.com/svg/321677/voodoo-doll)
