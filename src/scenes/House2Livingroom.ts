@@ -24,7 +24,7 @@ export default class House2Livingroom extends Scene {
 
   front(): void {
     println([
-      "The couch is dusty and full of papers, sheets and all sorts of stuff.",
+      "The couch is dusty and full of leaves, sheets and all sorts of dirty stuff.",
     ]);
 
     if (!this.game.player.checkItem(Items.House2Passepartout)) {
@@ -38,9 +38,7 @@ export default class House2Livingroom extends Scene {
 
     println(["You go back..."]);
 
-    setTimeout(() => {
-      this.blueprint();
-    }, 2000);
+    this.move();
   }
 
   back(): void {
