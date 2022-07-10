@@ -11,7 +11,7 @@ export default class MainGate extends Scene {
 
     setTimeout(() => {
       this.doorLocked = true;
-    }, 1);
+    }, 60000);
   }
 
   blueprint(): void {
