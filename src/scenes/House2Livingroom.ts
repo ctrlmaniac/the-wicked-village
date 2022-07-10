@@ -1,3 +1,4 @@
+import { Items } from "../items";
 import { println } from "../utils";
 import Scene from "./Scene";
 
@@ -24,8 +25,21 @@ export default class House2Livingroom extends Scene {
   front(): void {
     println([
       "The couch is dusty and full of papers, sheets and all sorts of stuff.",
-      "You see there's something that shimmer under the light of the sun.",
-      "There's a key!",
     ]);
+
+    if (!this.game.player.checkItem(Items.House2Passepartout)) {
+      println([
+        "You see there's something that shimmer under the light of the sun.",
+        "There's a key!",
+      ]);
+
+      this.game.player.pickAnItem(Items.House2Passepartout);
+    }
+
+    println(["You go back..."]);
+
+    setTimeout(() => {
+      this.blueprint();
+    }, 2000);
   }
 }

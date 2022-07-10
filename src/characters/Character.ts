@@ -22,4 +22,8 @@ export default class Character {
       println([...this.items]);
     }
   }
+
+  checkItem(item: string) {
+    return this.items.includes(item);
+  }
 }
