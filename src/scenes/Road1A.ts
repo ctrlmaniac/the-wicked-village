@@ -20,7 +20,7 @@ export default class Road1A extends Scene {
   }
 
   right(): void {
-    this.game.scenes.House1.welcome();
+    this.game.scenes.House2.welcome();
   }
 
   back(): void {
@@ -28,6 +28,6 @@ export default class Road1A extends Scene {
   }
 
   left(): void {
-    this.game.scenes.House2.welcome();
+    this.game.scenes.House1.welcome();
   }
 }
