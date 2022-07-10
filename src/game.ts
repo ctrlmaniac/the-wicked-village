@@ -5,6 +5,7 @@ import {
   House2Diningroom,
   House2Hall,
   House2Livingroom,
+  House3,
   MainGate,
   Road1A,
   Road1B,
@@ -22,15 +23,20 @@ export default class Game {
 
   scenes = {
     MainGate: new MainGate(this),
+
     Road1A: new Road1A(this),
     Road1B: new Road1B(this),
     Road1C: new Road1C(this),
     Road1D: new Road1D(this),
+
     House1: new House1(this),
+
     House2: new House2(this),
     House2Hall: new House2Hall(this),
     House2Livingroom: new House2Livingroom(this),
     House2Diningroom: new House2Diningroom(this),
+
+    House3: new House3(this),
   };
 
   gameOver(): void {
