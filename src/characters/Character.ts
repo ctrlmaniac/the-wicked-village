@@ -1,17 +1,25 @@
 import { println } from "../utils";
 
 export default class Character {
-  maxHealth: number;
-  health: number;
-  items: string[] = [];
+  private maxHealth: number;
+  private health: number;
+  private items: string[] = [];
 
-  constructor(maxHealth: number) {
-    this.maxHealth = maxHealth;
+  constructor() {
+    this.maxHealth = 20;
     this.health = this.maxHealth;
   }
 
   pickAnItem(item: string) {
     this.items.push(item);
     println([`You've picked ${item}!`]);
+  }
+
+  checkItems() {
+    if (this.items.length == 0) {
+      println(["There's nothing in your pockets."]);
+    } else {
+      println([...this.items]);
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { Player } from "./characters";
 import {
   House1,
   House2,
@@ -8,6 +9,12 @@ import {
 } from "./scenes";
 
 export default class Game {
+  player: Player;
+
+  constructor(player: Player) {
+    this.player = player;
+  }
+
   scenes = {
     MainGate: new MainGate(this),
     Road1A: new Road1A(this),

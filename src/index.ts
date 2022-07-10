@@ -1,3 +1,4 @@
+import { Player } from "./characters";
 import Game from "./game";
 import "./index.scss";
 
@@ -15,7 +16,9 @@ form.addEventListener("submit", (ev) => {
   document.dispatchEvent(event);
 });
 
+const player = new Player();
+
 // Init the game
-const game = new Game();
+const game = new Game(player);
 
 game.play();
