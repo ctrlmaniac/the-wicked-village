@@ -62,6 +62,12 @@ export default class Scene {
           this.blueprint();
           break;
 
+        case "I":
+        case "i":
+          this.game.player.checkItems();
+          this.move();
+          break;
+
         default:
           break;
       }
