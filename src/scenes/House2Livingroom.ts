@@ -16,7 +16,7 @@ export default class House2Livingroom extends Scene {
   welcome(): void {
     println([
       "The livingroom is a total mess.",
-      "You try to walk but the furniture obstruct the way.",
+      "You try to walk but the furniture obstructs the way.",
     ]);
     this.blueprint();
   }
