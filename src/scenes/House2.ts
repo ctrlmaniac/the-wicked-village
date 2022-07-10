@@ -17,7 +17,7 @@ export default class House2 extends Scene {
 
   welcome(): void {
     println([
-      "The house is at the second street number.",
+      "The house is at the 2 street number.",
       "It's is very old.",
       "The garden is overgrown and deserted.",
       "It seems that noone has lived in this house for a long time.",
