@@ -7,6 +7,7 @@ import {
   House2Livingroom,
   MainGate,
   Road1A,
+  Road1B,
 } from "./scenes";
 
 export default class Game {
@@ -19,6 +20,7 @@ export default class Game {
   scenes = {
     MainGate: new MainGate(this),
     Road1A: new Road1A(this),
+    Road1B: new Road1B(this),
     House1: new House1(this),
     House2: new House2(this),
     House2Hall: new House2Hall(this),

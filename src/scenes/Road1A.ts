@@ -4,7 +4,7 @@ import Scene from "./Scene";
 export default class Road1A extends Scene {
   blueprint(): void {
     println([
-      "- In front on you the road continues.",
+      "- In front of you the road continues.",
       "- On your right there's a house",
       "- On your back there's the village main gate.",
       "- On your left there's another house.",
@@ -15,8 +15,11 @@ export default class Road1A extends Scene {
 
   welcome(): void {
     println(["You're on the main road."]);
-
     this.blueprint();
+  }
+
+  front(): void {
+    this.game.scenes.Road1B.welcome();
   }
 
   right(): void {
