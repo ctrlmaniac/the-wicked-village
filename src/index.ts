@@ -1,6 +1,5 @@
 import { Player } from "./characters";
 import Game from "./game";
-import "./index.scss";
 
 const form = document.getElementById("form");
 const input = document.getElementById("input") as HTMLFormElement;
