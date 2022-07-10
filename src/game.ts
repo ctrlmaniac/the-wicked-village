@@ -8,6 +8,7 @@ import {
   MainGate,
   Road1A,
   Road1B,
+  Road1C,
 } from "./scenes";
 import { println } from "./utils";
 
@@ -22,6 +23,7 @@ export default class Game {
     MainGate: new MainGate(this),
     Road1A: new Road1A(this),
     Road1B: new Road1B(this),
+    Road1C: new Road1C(this),
     House1: new House1(this),
     House2: new House2(this),
     House2Hall: new House2Hall(this),
