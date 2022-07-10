@@ -2,6 +2,7 @@ import { Player } from "./characters";
 import {
   House1,
   House2,
+  House2Diningroom,
   House2Hall,
   House2Livingroom,
   MainGate,
@@ -22,6 +23,7 @@ export default class Game {
     House2: new House2(this),
     House2Hall: new House2Hall(this),
     House2Livingroom: new House2Livingroom(this),
+    House2Diningroom: new House2Diningroom(this),
   };
 
   play() {

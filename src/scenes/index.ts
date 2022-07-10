@@ -10,3 +10,4 @@ export { default as House1 } from "./House1";
 export { default as House2 } from "./House2";
 export { default as House2Hall } from "./House2Hall";
 export { default as House2Livingroom } from "./House2Livingroom";
+export { default as House2Diningroom } from "./House2Diningroom";

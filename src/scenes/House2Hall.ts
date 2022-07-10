@@ -16,6 +16,7 @@ export default class House2Hall extends Scene {
 
   welcome(): void {
     println([
+      "You're in the hall.",
       "The house is neglected.",
       "It seems that noone has lived in this house for a long time.",
     ]);
@@ -41,9 +42,7 @@ export default class House2Hall extends Scene {
 
         default:
           println(["You go back..."]);
-          setTimeout(() => {
-            this.move();
-          }, 2000);
+          this.move();
           break;
       }
     };
@@ -51,8 +50,8 @@ export default class House2Hall extends Scene {
 
   openTheDoor() {
     if (this.game.player.checkItem(Items.House2Passepartout)) {
-      println(["You unlock the door and enter the room"]);
-      // livingroom
+      println(["You unlock the door and enter the room."]);
+      this.game.scenes.House2Diningroom.welcome();
     } else {
       println([
         "The door is locked. You need a key to enter the room.",
