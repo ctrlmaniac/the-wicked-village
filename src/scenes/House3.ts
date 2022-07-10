@@ -14,7 +14,7 @@ export default class House3 extends Scene {
     println([
       "- In front of you there's a closed door.",
       "- On your right there's a window",
-      "- On your back there's the main road.", // Road 1A
+      "- On your back there's the main road.", // Road 1B
       "- On your left there's another window.",
     ]);
 
