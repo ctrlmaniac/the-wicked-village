@@ -9,9 +9,9 @@ export default class Road1C extends Scene {
 
   blueprint(): void {
     println([
-      "- In front of you the road continues.",
+      "- In front of you the road continues.", // Road 1D
       "- On your right there's an allay.",
-      "- On your back the road takes to the main gate.",
+      "- On your back the road takes to the main gate.", // Road 1B
       "- On your left there's another road.",
     ]);
     this.move();

@@ -8,7 +8,7 @@ export default class House1 extends Scene {
     println([
       "- In front of you there's a closed door.",
       "- On your right there's a window",
-      "- On your back there's the main road.",
+      "- On your back there's the main road.", // Road 1A
       "- On your left there's a bench.",
     ]);
 
