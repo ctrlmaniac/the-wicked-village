@@ -6,8 +6,8 @@ export default class House2Livingroom extends Scene {
   blueprint(): void {
     println([
       "- In front of you there's a couch.",
-      "- On your left there are some paintings",
-      "- On your back there's the door to the hall",
+      "- On your left there are some pictures.",
+      "- On your back there's the door to the hall.",
       "- On your left there's a shelf",
     ]);
 
@@ -43,5 +43,15 @@ export default class House2Livingroom extends Scene {
 
   back(): void {
     this.game.scenes.House2Hall.blueprint();
+  }
+
+  left(): void {
+    println([
+      "There are some pictures, maybe they portait the family that used to live here!",
+      "There's nothing more here.",
+      "You go back...",
+    ]);
+
+    this.move();
   }
 }
