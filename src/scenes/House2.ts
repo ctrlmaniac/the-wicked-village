@@ -28,6 +28,7 @@ export default class House2 extends Scene {
 
   front(): void {
     let fired = false;
+
     println(["The door is closed.", "Do you want to knock on the door?"]);
 
     document.onkeydown = (ev) => {
@@ -35,6 +36,7 @@ export default class House2 extends Scene {
         fired = true;
 
         switch (ev.key) {
+          case "Enter":
           case "Y":
           case "y":
             this.knockOnDoor();
@@ -65,6 +67,7 @@ export default class House2 extends Scene {
           fired = true;
 
           switch (ev.key) {
+            case "Enter":
             case "Y":
             case "y":
               this.openTheDoor();

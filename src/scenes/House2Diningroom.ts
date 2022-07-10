@@ -36,6 +36,7 @@ export default class House2Diningroom extends Scene {
         fired = true;
 
         switch (ev.key) {
+          case "Enter":
           case "Y":
           case "y":
             this.game.player.pickAnItem(Items.KitchenKnife);

@@ -43,6 +43,7 @@ export default class House2Hall extends Scene {
         fired = true;
 
         switch (ev.key) {
+          case "Enter":
           case "Y":
           case "y":
             this.openTheDoor();

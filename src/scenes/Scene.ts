@@ -34,26 +34,33 @@ export default class Scene {
 
   move(): void {
     let fired = false;
+
     document.onkeydown = (ev) => {
+      console.log(ev.key);
+
       if (!fired) {
         fired = true;
 
         switch (ev.key) {
+          case "ArrowUp":
           case "F":
           case "f":
             this.front();
             break;
 
+          case "ArrowRight":
           case "R":
           case "r":
             this.right();
             break;
 
+          case "ArrowDown":
           case "B":
           case "b":
             this.back();
             break;
 
+          case "ArrowLeft":
           case "L":
           case "l":
             this.left();
