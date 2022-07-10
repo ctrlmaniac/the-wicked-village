@@ -89,9 +89,7 @@ export default class House1 extends Scene {
         "You go back...",
       ]);
 
-      setTimeout(() => {
-        this.move();
-      }, 4000);
+      this.move();
     }
   }
 
@@ -102,9 +100,7 @@ export default class House1 extends Scene {
       "You go back...",
     ]);
 
-    setTimeout(() => {
-      this.move();
-    }, 2000);
+    this.move();
   }
 
   back(): void {

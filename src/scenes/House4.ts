@@ -1,35 +1,46 @@
 import { println } from "../utils";
 import Scene from "./Scene";
 
-export default class House2 extends Scene {
-  doorLocked: boolean = false;
+export default class House4 extends Scene {
+  doorLocked = true;
+
+  welcome(): void {
+    println(["You're in front of the house at the 4 street number."]);
+    this.blueprint();
+  }
 
   blueprint(): void {
     println([
       "- In front of you there's a closed door.",
       "- On your right there's a window",
-      "- On your back there's the main road.", // Road 1A
-      "- On your left there's another window.",
+      "- On your back there's the main road.", // Road 1B
     ]);
 
     this.move();
   }
 
-  welcome(): void {
+  right(): void {
     println([
-      "The house is at the 2 street number.",
-      "It's is very old.",
-      "The garden is overgrown and deserted.",
-      "It seems that noone has lived in this house for a long time.",
+      "There's a window.",
+      "You try to see through.",
+      "The room is empty.",
+      "You go back...",
     ]);
 
-    this.blueprint();
+    this.move();
+  }
+
+  back(): void {
+    this.game.scenes.Road1B.welcome();
   }
 
   front(): void {
     let fired = false;
 
-    println(["The door is closed.", "Do you want to knock on the door?"]);
+    println([
+      "You're in front of the door.",
+      "Do you want to knock on the door?",
+    ]);
 
     document.onkeydown = (ev) => {
       if (!fired) {
@@ -64,8 +75,6 @@ export default class House2 extends Scene {
 
       document.onkeydown = (ev) => {
         if (!fired) {
-          fired = true;
-
           switch (ev.key) {
             case "Enter":
             case "Y":
@@ -75,7 +84,9 @@ export default class House2 extends Scene {
 
             default:
               println(["You go back..."]);
-              this.move();
+              setTimeout(() => {
+                this.move();
+              }, 2000);
               break;
           }
         }
@@ -91,37 +102,6 @@ export default class House2 extends Scene {
       ]);
 
       this.move();
-    } else {
-      println(["The door is opened and you enter the house..."]);
-
-      setTimeout(() => {
-        this.game.scenes.House2Hall.welcome();
-      }, 2000);
     }
-  }
-
-  right(): void {
-    println([
-      "The window is broken. You try to see through.",
-      "The house seems abandonded, the fornitures are not in their place.",
-      "You see a couch and something shimmers on it.",
-      "You go back...",
-    ]);
-
-    this.move();
-  }
-
-  back(): void {
-    this.game.scenes.Road1A.welcome();
-  }
-
-  left(): void {
-    println([
-      "The window is really dirty and dusty.",
-      "You try to see through but you can't see anything.",
-      "You go back...",
-    ]);
-
-    this.move();
   }
 }

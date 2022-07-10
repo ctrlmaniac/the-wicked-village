@@ -10,9 +10,9 @@ export default class Road1B extends Scene {
   blueprint(): void {
     println([
       "- In front of you the road continues.", // Road 1C
-      "- On your right there's a house.", // House 3
+      "- On your right there's a house.", // House 4
       "- On your back the road takes to the main gate.", // Road 1A
-      "- On your left there's another house.",
+      "- On your left there's another house.", // House 3
     ]);
     this.move();
   }
@@ -26,6 +26,10 @@ export default class Road1B extends Scene {
   }
 
   right(): void {
+    this.game.scenes.House4.welcome();
+  }
+
+  left(): void {
     this.game.scenes.House3.welcome();
   }
 }
