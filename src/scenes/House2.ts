@@ -1,15 +1,15 @@
 import { println } from "../utils";
 import Scene from "./Scene";
 
-export default class House1 extends Scene {
-  doorLocked: boolean = true;
+export default class House2 extends Scene {
+  doorLocked: boolean = false;
 
   blueprint(): void {
     println([
       "- In front of you there's a closed door.",
       "- On your right there's a window",
       "- On your back there's the main road.",
-      "- On your left there's a bench.",
+      "- On your left there's another window.",
     ]);
 
     this.move();
@@ -17,9 +17,9 @@ export default class House1 extends Scene {
 
   welcome(): void {
     println([
-      "You're in front of a house.",
-      "The house is old and in bad conditions.",
-      "You need to find your daugther, maybe the owner knows something...",
+      "The house is very old.",
+      "The garden is overgrown and deserted.",
+      "It seems that noone has lived in this house for a long time.",
     ]);
 
     this.blueprint();
@@ -84,19 +84,25 @@ export default class House1 extends Scene {
       setTimeout(() => {
         this.welcome();
       }, 4000);
+    } else {
+      println(["The door is opened and you enter the house..."]);
+
+      setTimeout(() => {
+        this.game.scenes.House2Hall.welcome();
+      }, 2000);
     }
   }
 
   right(): void {
     println([
-      "There's a window.",
-      "You try to see if there's someone inside, but it seems that noone is there.",
+      "The window is broken. You try to see through.",
+      "The house seems abandonded, maybe there's just nothing useful inside.",
       "You go back...",
     ]);
 
     setTimeout(() => {
       this.welcome();
-    }, 2000);
+    }, 4000);
   }
 
   back(): void {
@@ -105,12 +111,13 @@ export default class House1 extends Scene {
 
   left(): void {
     println([
-      "There's an old bench here but nothing useful.",
+      "The window is really dirty and dusty.",
+      "You try to see through but you can't see anything.",
       "You go back...",
     ]);
 
     setTimeout(() => {
       this.welcome();
-    }, 2000);
+    }, 4000);
   }
 }

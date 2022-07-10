@@ -26,4 +26,8 @@ export default class Road1A extends Scene {
   back(): void {
     this.game.scenes.MainGate.welcome();
   }
+
+  left(): void {
+    this.game.scenes.House2.welcome();
+  }
 }
