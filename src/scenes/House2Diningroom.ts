@@ -17,7 +17,10 @@ export default class House2Diningroom extends Scene {
   }
 
   blueprint(): void {
-    println(["- In front of you there's a table."]);
+    println([
+      "- In front of you there's a table.",
+      "- On your back there's the door to the hallway.",
+    ]);
     this.move();
   }
 
