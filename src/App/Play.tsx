@@ -1,3 +1,6 @@
+import React from "react";
+import { Player } from "../characters";
+import Game from "../game";
 import {
   AppBar,
   Toolbar,
@@ -7,14 +10,13 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
+  TextField,
 } from "@mui/material";
 import { IconHelp } from "@tabler/icons";
-import React from "react";
-import { Player } from "../characters";
-import Game from "../game";
 
 const Play: React.FC = () => {
   const [open, setOpen] = React.useState(false);
+  const [key, setKey] = React.useState("");
 
   React.useEffect(() => {
     const player = new Player();
@@ -25,21 +27,32 @@ const Play: React.FC = () => {
     game.play();
   }, []);
 
+  const handleChange = (ev: React.ChangeEvent) => {
+    const { value } = ev.target as HTMLInputElement;
+
+    setKey(value);
+
+    let event = new KeyboardEvent("keydown", { key: value.toLowerCase() });
+
+    document.dispatchEvent(event);
+  };
+
   return (
     <React.Fragment>
       <AppBar>
         <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-            }}
-          >
+          <Typography variant="h6" component="div" sx={{ mr: 2 }}>
             T.W.V.
           </Typography>
 
-          <IconButton edge="end" onClick={() => setOpen(true)}>
+          <TextField
+            sx={{ flexGrow: 1 }}
+            size="small"
+            onChange={handleChange}
+            value={key}
+          />
+
+          <IconButton onClick={() => setOpen(true)} sx={{ ml: 2 }}>
             <IconHelp />
           </IconButton>
         </Toolbar>
