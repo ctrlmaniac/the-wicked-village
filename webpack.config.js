@@ -46,8 +46,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      filename: "index.html",
       template: "public/index.html",
-      environment: process.env.NODE_ENV,
+      inject: false,
     }),
     new webpack.DefinePlugin({
       STATIC_PATH: JSON.stringify(STATIC_PATH),
