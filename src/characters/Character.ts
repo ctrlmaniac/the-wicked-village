@@ -17,7 +17,7 @@ export default class Character {
   }
 
   checkItems() {
-    if (this.items.length == 0) {
+    if (this.items.length === 0) {
       println(["There's nothing in your pockets."]);
     } else {
       const pocket: string[] = [];
