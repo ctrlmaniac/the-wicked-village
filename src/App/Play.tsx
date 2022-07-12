@@ -1,9 +1,21 @@
-import { AppBar, Toolbar, Typography, Box } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  IconButton,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+} from "@mui/material";
+import { IconHelp } from "@tabler/icons";
 import React from "react";
 import { Player } from "../characters";
 import Game from "../game";
 
 const Play: React.FC = () => {
+  const [open, setOpen] = React.useState(false);
+
   React.useEffect(() => {
     const player = new Player();
 
@@ -19,23 +31,59 @@ const Play: React.FC = () => {
         <Toolbar>
           <Typography
             variant="h6"
-            component="h1"
+            component="div"
             sx={{
-              position: "fixed",
-              top: 0,
-              right: 0,
-              left: 0,
-              padding: 2,
-              backgroundColor: "inherit",
+              flexGrow: 1,
             }}
           >
-            The Wicked Village
+            T.W.V.
           </Typography>
+
+          <IconButton edge="end" onClick={() => setOpen(true)}>
+            <IconHelp />
+          </IconButton>
         </Toolbar>
       </AppBar>
+
       <Box id="main" sx={{ pl: 2 }}>
         <Toolbar />
       </Box>
+
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <DialogTitle>Help</DialogTitle>
+        <DialogContent>
+          <Typography gutterBottom>
+            Use your keyboard to play the game:
+          </Typography>
+          <Typography>
+            <kbd>F</kbd> or the UP ARROW to go forward.
+          </Typography>
+          <Typography>
+            <kbd>R</kbd> or the RIGHT ARROW to go right.
+          </Typography>
+          <Typography>
+            <kbd>B</kbd> or the DOWN ARROW to go back.
+          </Typography>
+          <Typography>
+            <kbd>L</kbd> or the LEFT ARROW to go left.
+          </Typography>
+          <Typography>
+            <kbd>Y</kbd> or <kbd>ENTER</kbd> to sey yes.
+          </Typography>
+          <Typography>
+            <kbd>N</kbd> or <kbd>DELETE</kbd> to say no.
+          </Typography>
+          <Typography>
+            <kbd>H</kbd> to hask for help.
+          </Typography>
+          <Typography>
+            <kbd>I</kbd> to check the inventory.
+          </Typography>
+          <Typography>
+            <kbd>D</kbd> to drop an item from the inventory.
+          </Typography>
+        </DialogContent>
+      </Dialog>
     </React.Fragment>
   );
 };
