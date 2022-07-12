@@ -2,7 +2,7 @@
   "name": "the-wicked-village",
   "version": "0.7.2",
   "private": true,
-  "homepage": "https://ctrlmaniac.github.io/the-wicked-village",
+  "homepage": "https://ctrlmaniac.github.io/the-wicked-village/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
